@@ -1,0 +1,13 @@
+{
+  "compatibilityLevel": "JAVA_8",
+  "minVersion": "0.7.10",
+  "package": "org.theplaceholder.dmsm.mixins",
+  "refmap": "mixins.dalekmod.refmap.json",
+  "required": true,
+  "mixins": [
+  ],
+  "client": [
+    "client.MainMenuScreenMixin",
+    "dalekmod.client.DalekModBusClientEventsMixin"
+  ]
+}

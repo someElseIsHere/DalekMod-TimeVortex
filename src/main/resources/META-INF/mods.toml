@@ -1,0 +1,31 @@
+modLoader="javafml"
+loaderVersion="[36,)"
+license="GPL-3.0"
+[[mods]]
+modId="timevortex"
+version="${file.jarVersion}"
+displayName="Dalek Mod: Story Mode"
+credits="SWDTeam for the Vortexes Textures"
+authors="thePlaceholder"
+
+description='''
+Timey Wimey Stuff
+'''
+[[dependencies.timevortex]]
+    modId="forge"
+    mandatory=true
+    versionRange="[36,)"
+    ordering="NONE"
+    side="BOTH"
+[[dependencies.timevortex]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.16.5,1.17)"
+    ordering="NONE"
+    side="BOTH"
+[[dependencies.timevortex]]
+    modId="dalekmod"
+    mandatory=true
+    versionRange="[67,)"
+    ordering="AFTER"
+    side="BOTH"
