@@ -4,7 +4,7 @@ license="GPL-3.0"
 [[mods]]
 modId="timevortex"
 version="${file.jarVersion}"
-displayName="Dalek Mod: Story Mode"
+displayName="Dalek Mod: Time Vortex"
 credits="SWDTeam for the Vortexes Textures"
 authors="thePlaceholder"
 
@@ -28,4 +28,4 @@ Timey Wimey Stuff
     mandatory=true
     versionRange="[67,)"
     ordering="AFTER"
-    side="BOTH"
+    side="CLIENT"

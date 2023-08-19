@@ -7,17 +7,13 @@ import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig;
 import org.theplaceholder.dmsm.client.config.VortexConfig;
-import org.theplaceholder.dmsm.client.vortex.VortexType;
 
 @Mod(DMTV.MODID)
 public class DMTV {
     public static final String MODID = "timevortex";
 
     public DMTV() {
-        DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> () -> {
-            VortexType.init();
-            registerClientConfigs();
-        });
+        DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> DMTV::registerClientConfigs);
     }
 
     private static void registerClientConfigs() {

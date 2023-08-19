@@ -5,15 +5,18 @@ public enum VortexType {
     Y1980("1980"),
     Y2005("2005"),
     Y2005_BLUE("2005_blue"),
+    Y2018("2018"),
     CUSTOM("custom"),
     DEFAULT("default"),
     EDBLUE("edblue"),
-    STARS("stars"),
-    WHITE("white"),
-    NONE("none");
+    NONE("custom");
 
     public Vortex vortex;
     VortexType(String name) {
         vortex = new Vortex(name);
+    }
+
+    VortexType(Vortex vortex) {
+        this.vortex = vortex;
     }
 }
