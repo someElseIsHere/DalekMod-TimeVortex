@@ -19,6 +19,6 @@ public class DMTV {
     private static void registerClientConfigs() {
         ForgeConfigSpec.Builder CLIENT_BUILDER = new ForgeConfigSpec.Builder();
         VortexConfig.registerClientConfig(CLIENT_BUILDER);
-        ModLoadingContext.get().registerConfig(ModConfig.Type.CLIENT, CLIENT_BUILDER.build());
+        ModLoadingContext.get().registerConfig(ModConfig.Type.CLIENT, CLIENT_BUILDER.build(), MODID + ".toml");
     }
 }

@@ -41,7 +41,7 @@ public class Vortex{
 		GlStateManager._clear(GL11.GL_COLOR_BUFFER_BIT | GL11.GL_DEPTH_BUFFER_BIT, true);
 
 		GlStateManager._pushMatrix();
-		GlStateManager._translatef(width / 2, height / 2, -scale);
+		GlStateManager._translatef(width / 2, height / 2, -100);
 		GlStateManager._scalef(scale, scale, 0);
 
 		renderVortex();
@@ -72,7 +72,7 @@ public class Vortex{
 		}
 
 		tessellator.end();
-
+		GlStateManager._disableCull();
 		GlStateManager._popMatrix();
 		time += Minecraft.getInstance().getDeltaFrameTime() / 100;
 	}
