@@ -1,4 +1,4 @@
-package org.theplaceholder.dmsm.mixins.client;
+package org.theplaceholder.dmsm.mixins;
 
 import net.minecraft.client.gui.screen.MainMenuScreen;
 import net.minecraft.client.renderer.RenderSkybox;

@@ -13,7 +13,9 @@ public class DMTV {
     public static final String MODID = "timevortex";
 
     public DMTV() {
-        DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> DMTV::registerClientConfigs);
+        DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> () -> {
+            DMTV.registerClientConfigs();
+        });
     }
 
     private static void registerClientConfigs() {

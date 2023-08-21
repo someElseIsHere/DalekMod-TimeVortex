@@ -12,6 +12,6 @@ public class VortexSkybox extends RenderSkybox {
     }
 
     public void render(float x, float y) {
-        vortex.render();
+        vortex.renderAsBackground();
     }
 }

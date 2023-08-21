@@ -2,7 +2,6 @@ package org.theplaceholder.dmsm.client.vortex;
 
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.systems.RenderSystem;
-import com.swdteam.client.tardis.data.ClientTardisCache;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.renderer.BufferBuilder;
@@ -31,8 +30,8 @@ public class VortexScreen extends Screen {
 
     @Override
     public void render(MatrixStack matrixStack, int mouseX, int mouseY, float tick) {
-        //vortex.render();
-        RenderVortexTardis.render();
+        vortex.renderAsBackground();
+        //RenderVortexTardis.render();
 
         RenderSystem.pushMatrix();
         RenderSystem.translatef(0.0F, 0.0F, 200.0F);

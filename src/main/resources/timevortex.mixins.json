@@ -4,10 +4,9 @@
   "package": "org.theplaceholder.dmsm.mixins",
   "refmap": "mixins.dalekmod.refmap.json",
   "required": true,
-  "mixins": [
-  ],
+  "mixins": [],
   "client": [
-    "client.FlightPanelBlockMixin",
-    "client.MainMenuScreenMixin"
+    "FlightPanelBlockMixin",
+    "MainMenuScreenMixin"
   ]
 }

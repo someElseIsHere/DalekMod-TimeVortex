@@ -1,4 +1,4 @@
-package org.theplaceholder.dmsm.mixins.client;
+package org.theplaceholder.dmsm.mixins;
 
 import com.swdteam.client.tardis.data.ClientTardisCache;
 import com.swdteam.common.block.tardis.FlightPanelBlock;
