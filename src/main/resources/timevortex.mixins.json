@@ -1,13 +1,13 @@
 {
   "compatibilityLevel": "JAVA_8",
-  "minVersion": "0.7.10",
+  "minVersion": "0.8",
   "package": "org.theplaceholder.dmtv.mixins",
-  "refmap": "mixins.dalekmod.refmap.json",
+  "refmap": "timevortex.refmap.json",
   "required": true,
-  "mixins": [],
+  "mixins": [
+    "FlightPanelBlockMixin"
+  ],
   "client": [
-    "FlightPanelBlockMixin",
-    "MainMenuScreenMixin",
-    "DMTileEntityRenderRegistryMixin"
+    "MainMenuScreenMixin"
   ]
 }

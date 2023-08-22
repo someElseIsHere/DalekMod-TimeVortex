@@ -10,7 +10,6 @@ import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.TranslationTextComponent;
 import org.theplaceholder.dmtv.client.config.VortexConfig;
-import org.theplaceholder.dmtv.client.tardis.RenderVortexTardis;
 
 import static com.swdteam.main.DalekMod.MODID;
 
@@ -59,6 +58,5 @@ public class VortexScreen extends Screen {
     @Override
     public void tick() {
         super.tick();
-        RenderVortexTardis.tick();
     }
 }

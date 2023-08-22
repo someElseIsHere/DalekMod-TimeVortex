@@ -19,10 +19,10 @@ import org.spongepowered.asm.mixin.injection.Redirect;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import org.theplaceholder.dmtv.client.vortex.VortexScreen;
 
-@Mixin(FlightPanelBlock.class)
+@Mixin(value = FlightPanelBlock.class, remap = false)
 public class FlightPanelBlockMixin {
 
-    @Inject(method = "use", at = @At("TAIL"))
+    @Inject(method = "func_225533_a_", at = @At("TAIL"))
     private void onUse(BlockState state, World worldIn, BlockPos pos, PlayerEntity player, Hand handIn, BlockRayTraceResult p_225533_6_, CallbackInfoReturnable<ActionResultType> cir) {
         if (!worldIn.isClientSide) return;
 
@@ -34,6 +34,6 @@ public class FlightPanelBlockMixin {
         }
     }
 
-    @Redirect(method = "use", at = @At(value = "INVOKE", target = "Lcom/swdteam/util/ChatUtil;sendError(Lnet/minecraft/entity/player/PlayerEntity;Ljava/lang/String;Lcom/swdteam/util/ChatUtil$MessageType;)V"), remap = false)
+    @Redirect(method = "func_225533_a_", at = @At(value = "INVOKE", target = "Lcom/swdteam/util/ChatUtil;sendError(Lnet/minecraft/entity/player/PlayerEntity;Ljava/lang/String;Lcom/swdteam/util/ChatUtil$MessageType;)V"), remap = false)
     private void onUseRedirect(PlayerEntity player, String s, ChatUtil.MessageType type) {}
 }

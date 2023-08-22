@@ -79,13 +79,11 @@ repositories {
 dependencies {
     minecraft 'net.minecraftforge:forge:1.16.5-36.2.39'
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
-    implementation fg.deobf("curse.maven:the-dalek-mod-59654:4706185")
-    implementation fg.deobf(fileTree(dir: 'libs', include: '*.jar'))
+    implementation "curse.maven:the-dalek-mod-59654:4706185"
 }
 
 mixin {
     add sourceSets.main, "timevortex.refmap.json"
-    config 'timevortex.mixins.json'
 }
 
 

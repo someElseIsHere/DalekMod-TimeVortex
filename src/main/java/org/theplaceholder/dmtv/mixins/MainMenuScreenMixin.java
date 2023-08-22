@@ -17,8 +17,9 @@ public abstract class MainMenuScreenMixin{
     @Mutable
     @Shadow @Final private RenderSkybox panorama;
 
-    @Inject(method = "init", at = @At(value = "TAIL"))
+    @Inject(method = "init", at = @At(value = "RETURN"))
     private void init(CallbackInfo ci) {
         panorama = new VortexSkybox(VortexConfig.getVortex());
+        System.out.println("Vortex Skybox initialized");
     }
 }
