@@ -1,4 +1,4 @@
-package org.theplaceholder.dmsm.client.vortex;
+package org.theplaceholder.dmtv.client.vortex;
 
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.systems.RenderSystem;
@@ -9,8 +9,8 @@ import net.minecraft.client.renderer.Tessellator;
 import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.TranslationTextComponent;
-import org.theplaceholder.dmsm.client.config.VortexConfig;
-import org.theplaceholder.dmsm.client.tardis.RenderVortexTardis;
+import org.theplaceholder.dmtv.client.config.VortexConfig;
+import org.theplaceholder.dmtv.client.tardis.RenderVortexTardis;
 
 import static com.swdteam.main.DalekMod.MODID;
 

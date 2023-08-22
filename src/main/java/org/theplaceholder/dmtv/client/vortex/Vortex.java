@@ -1,21 +1,17 @@
-package org.theplaceholder.dmsm.client.vortex;
+package org.theplaceholder.dmtv.client.vortex;
 
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.platform.GlStateManager;
 import com.mojang.blaze3d.systems.RenderSystem;
+import com.mojang.blaze3d.vertex.IVertexBuilder;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.BufferBuilder;
-import net.minecraft.client.renderer.GLAllocation;
 import net.minecraft.client.renderer.Tessellator;
 import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
-import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ResourceLocation;
 import org.lwjgl.opengl.GL11;
-import org.theplaceholder.dmsm.client.config.VortexConfig;
 
-import java.nio.FloatBuffer;
-
-import static org.theplaceholder.dmsm.DMTV.MODID;
+import static org.theplaceholder.dmtv.DMTV.MODID;
 
 public class Vortex{
 	public ResourceLocation TEXTURE_LOCATION;
@@ -52,9 +48,34 @@ public class Vortex{
 		GlStateManager._popMatrix();
 	}
 
+	public void renderVortex(MatrixStack matrixStack, IVertexBuilder builder) {
+		matrixStack.pushPose();
+		RenderSystem.enableCull();
+
+		RenderSystem.enableTexture();
+
+		matrixStack.scale(scale, scale, 1);
+
+		float f0 = (float) Math.toDegrees(this.rotationFactor * Math.sin(time * this.rotationSpeed));
+		float f2 = f0 / 360.0f - (int) (f0 / 360.0);
+		float f3 = this.textureRotationOffsetFactor * f2 - (int) (this.textureRotationOffsetFactor * f2);
+		GL11.glRotated(f2 * 360.0, 0.0, 0.0, 1.0);
+
+		Minecraft.getInstance().textureManager.bind(TEXTURE_LOCATION);
+
+		for (int i = 0 ; i < 24; ++i) {
+			this.renderSection(builder, i, time * -this.speed, f3, (float) Math.sin(i * Math.PI / 36), (float) Math.sin((i + 1) * Math.PI / 36));
+		}
+
+		RenderSystem.disableCull();
+		matrixStack.popPose();
+		time += Minecraft.getInstance().getDeltaFrameTime() / 100;
+	}
+
 	public void renderVortex(MatrixStack matrixStack) {
 		matrixStack.pushPose();
 		RenderSystem.enableCull();
+
 		RenderSystem.enableTexture();
 
 		matrixStack.scale(scale, scale, 1);
@@ -67,7 +88,7 @@ public class Vortex{
 		Minecraft.getInstance().textureManager.bind(TEXTURE_LOCATION);
 		Tessellator tessellator = Tessellator.getInstance();
 		BufferBuilder buffer = tessellator.getBuilder();
-		buffer.begin(7, DefaultVertexFormats.POSITION_TEX);
+		buffer.begin(GL11.GL_QUADS, DefaultVertexFormats.POSITION_TEX);
 
 		for (int i = 0 ; i < 24; ++i) {
 			this.renderSection(buffer, i, time * -this.speed, f3, (float) Math.sin(i * Math.PI / 36), (float) Math.sin((i + 1) * Math.PI / 36));
@@ -82,7 +103,7 @@ public class Vortex{
 	private static float oneSixth = 1/6f;
 	private static float sqrt3Over2 = (float) Math.sqrt(3) / 2.0f;
 
-	public void renderSection(BufferBuilder builder, int locationOffset, float textureDistanceOffset, float textureRotationOffset, float startScale, float endScale) {
+	public void renderSection(IVertexBuilder builder, int locationOffset, float textureDistanceOffset, float textureRotationOffset, float startScale, float endScale) {
 		int verticalOffset = (locationOffset * oneSixth + textureDistanceOffset > 1.0) ? locationOffset - 6 : locationOffset;
 		int horizontalOffset = (textureRotationOffset > 1.0) ? -6 : 0;
 		float computedDistortionFactor = this.computeDistortionFactor(time, locationOffset);

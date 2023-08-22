@@ -1,4 +1,4 @@
-package org.theplaceholder.dmsm.mixins;
+package org.theplaceholder.dmtv.mixins;
 
 import net.minecraft.client.gui.screen.MainMenuScreen;
 import net.minecraft.client.renderer.RenderSkybox;
@@ -9,8 +9,8 @@ import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
-import org.theplaceholder.dmsm.client.config.VortexConfig;
-import org.theplaceholder.dmsm.client.vortex.VortexSkybox;
+import org.theplaceholder.dmtv.client.config.VortexConfig;
+import org.theplaceholder.dmtv.client.vortex.VortexSkybox;
 
 @Mixin(value = MainMenuScreen.class)
 public abstract class MainMenuScreenMixin{

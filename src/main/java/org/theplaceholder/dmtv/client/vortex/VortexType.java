@@ -1,4 +1,4 @@
-package org.theplaceholder.dmsm.client.vortex;
+package org.theplaceholder.dmtv.client.vortex;
 
 public enum VortexType {
     Y1976("1976"),

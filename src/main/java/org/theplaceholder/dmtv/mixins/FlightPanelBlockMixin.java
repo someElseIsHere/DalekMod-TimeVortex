@@ -1,4 +1,4 @@
-package org.theplaceholder.dmsm.mixins;
+package org.theplaceholder.dmtv.mixins;
 
 import com.swdteam.client.tardis.data.ClientTardisCache;
 import com.swdteam.common.block.tardis.FlightPanelBlock;
@@ -17,7 +17,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.Redirect;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
-import org.theplaceholder.dmsm.client.vortex.VortexScreen;
+import org.theplaceholder.dmtv.client.vortex.VortexScreen;
 
 @Mixin(FlightPanelBlock.class)
 public class FlightPanelBlockMixin {

@@ -1,8 +1,8 @@
-package org.theplaceholder.dmsm.client.config;
+package org.theplaceholder.dmtv.client.config;
 
 import net.minecraftforge.common.ForgeConfigSpec;
-import org.theplaceholder.dmsm.client.vortex.Vortex;
-import org.theplaceholder.dmsm.client.vortex.VortexType;
+import org.theplaceholder.dmtv.client.vortex.Vortex;
+import org.theplaceholder.dmtv.client.vortex.VortexType;
 
 import java.util.Random;
 

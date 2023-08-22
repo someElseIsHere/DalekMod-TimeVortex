@@ -1,4 +1,4 @@
-package org.theplaceholder.dmsm.client.vortex;
+package org.theplaceholder.dmtv.client.vortex;
 
 import net.minecraft.client.renderer.RenderSkybox;
 import net.minecraft.client.renderer.RenderSkyboxCube;
