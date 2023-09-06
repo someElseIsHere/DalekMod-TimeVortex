@@ -4,9 +4,7 @@
   "package": "org.theplaceholder.dmtv.mixins",
   "refmap": "timevortex.refmap.json",
   "required": true,
-  "mixins": [
-    "FlightPanelBlockMixin"
-  ],
+  "mixins": [],
   "client": [
     "MainMenuScreenMixin"
   ]

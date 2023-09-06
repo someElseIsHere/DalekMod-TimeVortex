@@ -15,7 +15,7 @@ apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
 apply plugin: 'org.spongepowered.mixin'
 
-version = '0.2'
+version = '0.2.3'
 group = 'org.theplaceholder.dmtv' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = 'DalekMod-TimeVortex'
 
